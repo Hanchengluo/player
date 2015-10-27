@@ -1554,10 +1554,14 @@ return /******/ (function(modules) { // webpackBootstrap
 			}.bind(this))
 
 			this.$listen('play', this.play)
+			this.$listen('pause', this.pause)
 		},
 		methods: {
 			play: function () {
 				this.$el.play()
+			},
+			pause: function () {
+				this.$el.pause()
 			}
 		}
 	})
