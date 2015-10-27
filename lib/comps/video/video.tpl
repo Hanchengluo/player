@@ -1,5 +1,5 @@
 <video 
-	src="http://www.w3schools.com/html/mov_bbb.mp4"
+	src="http://www.runoob.com/try/demo_source/movie.mp4"
 	width="100%" 
 	height="100%"
 	r-attr="{
