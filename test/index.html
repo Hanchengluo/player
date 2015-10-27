@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="http://imgcache.qq.com/tencentvideo_v1/vstyle/mobile/v2/style/player.css">
+	<title></title>
+	<style>
+		body {padding: 0;margin: auto}
+		#player {height: 252px;position: relative;}
+	</style>
+</head>
+<body>
+	<div id="player"></div>
+	<script src="../dist/player.js"></script>
+	<script>
+		var p = new Player({
+			container: document.getElementById('player'),
+			onload: function () {
+				console.log('loaded')
+			},
+			ui: {
+				control: true
+			}
+		})
+		console.log(p)
+	</script>
+</body>
+</html>
