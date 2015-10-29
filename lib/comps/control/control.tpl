@@ -11,7 +11,8 @@
 	<div class="tvp_time_rail">
 		<span class="tvp_time_total">
 			<span class="tvp_time_loaded" style="width: 100%;"></span>
-			<span class="tvp_time_current" style="width: 0px;"><span class="tvp_time_handle"></span></span>
+			<span class="tvp_time_current" style="width: 0px;"
+			><span class="tvp_time_handle"></span></span>
 		</span>
 		<span class="tvp_time_panel">
 			<span class="tvp_time_panel_current">00:00</span>
