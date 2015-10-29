@@ -2,8 +2,12 @@
 
 
 window.Real = require('./lib/real')
+var rproto = Real.prototype
 
 function noop () {}
+/**
+ * Get root component of the component instance.
+ */
 function _getRoot() {
 	var root = this._$root
 	if (!root) {
@@ -11,7 +15,11 @@ function _getRoot() {
 	}
 	return root
 }
-Real.prototype.$listen = function () {
+/**
+ * Subcribe message of the player instance
+ * @return {Function} Unlisten method
+ */
+rproto.$listen = function (/*[type, ]handler*/) {
 	var root = _getRoot.call(this)
 	var emitter = root ? root.$message() : null
 	if (emitter) {
@@ -19,13 +27,19 @@ Real.prototype.$listen = function () {
 	}
 	return noop
 }
-Real.prototype.$unlisten = function () {
+/**
+ * Remove subscribed message of the player instance
+ */
+rproto.$unlisten = function (/*[[type, ]handler]*/) {
 	var root = _getRoot.call(this)
 	var emitter = root ? root.$message() : null
 	emitter && emitter.off.apply(emitter, arguments)
 	return this
 }
-Real.prototype.$notify = function () {
+/**
+ * Publish message to the player instance
+ */
+rproto.$notify = function (/*type[, data, ...]*/) {
 	var root = _getRoot.call(this)
 	var emitter = root ? root.$message() : null
 	emitter && emitter.emit.apply(emitter, arguments)
